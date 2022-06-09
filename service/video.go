@@ -20,3 +20,15 @@ func AddVideoCommentNum(videoId int64) {
 	num := dao.GetVideoById(videoId).CommentCount
 	dao.AddVideoCommentNum(videoId, num)
 }
+
+func AddLike(videoId int64, actionType int64) error {
+	return dao.AddLike(videoId, actionType)
+}
+
+func GetFavoriteList() []dao.Video {
+	return dao.GetFavoriteList()
+}
+
+func GetPublishedVideosByTime(latest_time int) []dao.Video {
+	return dao.GetPublishedVideosByTime()
+}
